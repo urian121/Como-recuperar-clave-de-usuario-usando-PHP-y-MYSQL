@@ -20,6 +20,6 @@ if ($row = mysqli_fetch_assoc($QueryResul)) {
 	
 	echo '<meta http-equiv="refresh" content="0;url=../home.php">';
 }else{
-	echo '<meta http-equiv="refresh" content="0;url=../index.php">';
+	echo '<meta http-equiv="refresh" content="0;url=../index.php?emaiIncorrecto=1">';
 }
 ?>

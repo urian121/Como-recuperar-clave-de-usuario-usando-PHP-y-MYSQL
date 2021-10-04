@@ -13,7 +13,7 @@ $cantidadConsulta   = mysqli_num_rows($queryconsulta);
 $dataConsulta       = mysqli_fetch_array($queryconsulta);
 
 if($cantidadConsulta ==0){ 
-    header("Location:index.php?error=1");
+    header("Location:index.php?errorEmail=1");
     exit();
 }else{
 $updateClave    = ("UPDATE login SET password='.$clave.' WHERE email='".$correo."' ");
@@ -141,7 +141,7 @@ $cuerpo .= '
     $headers .= "Bcc:"; 
     (mail($destinatario,$asunto,$cuerpo,$headers));
 
-    header("Location:index.php?ce=1");
+    header("Location:index.php?email=1");
     exit();
 }
 

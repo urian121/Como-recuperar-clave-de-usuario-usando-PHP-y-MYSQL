@@ -32,6 +32,7 @@ if (isset($_SESSION['email']) != "") {
 
 
 <div class="container">
+  
   <div class="row text-center">
     <div class="col-md-12 p-md-4" style="background-color: #f9f9f9;">
       <p>Hola ya estoy logueado, soy <strong><?php echo $nameUser; ?></strong></p>
