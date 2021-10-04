@@ -4,7 +4,6 @@ include('verificarDatos/config.php');
 if (isset($_SESSION['email']) != "") {
     $nameUser   = $_SESSION['fullName'];
     $email      = $_SESSION['email'];
-    $rolUsuario = $_SESSION['rol'];
     $idUser     = $_SESSION['id'];
 ?>
 
@@ -36,7 +35,6 @@ if (isset($_SESSION['email']) != "") {
   <div class="row text-center">
     <div class="col-md-12 p-md-4" style="background-color: #f9f9f9;">
       <p>Hola ya estoy logueado, soy <strong><?php echo $nameUser; ?></strong></p>
-      <p>Mi rol de usuario es <strong><?php echo $rolUsuario; ?></strong></p>
       <hr>
     </div>
   </div>

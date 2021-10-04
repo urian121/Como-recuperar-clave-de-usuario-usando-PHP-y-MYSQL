@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2021 a las 23:41:39
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.4
+-- Servidor: localhost:3306
+-- Tiempo de generación: 04-10-2021 a las 16:31:28
+-- Versión del servidor: 10.3.31-MariaDB-cll-lve
+-- Versión de PHP: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,40 +19,38 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bd_logins`
+-- Base de datos: `sgbcolom_login`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `logintwo`
+-- Estructura de tabla para la tabla `login`
 --
 
-CREATE TABLE `logintwo` (
+CREATE TABLE `login` (
   `id` int(10) NOT NULL,
   `fullName` varchar(250) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
-  `rol` int(10) DEFAULT NULL,
-  `fechaRegistro` varchar(50) DEFAULT NULL
+  `password` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `logintwo`
+-- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `logintwo` (`id`, `fullName`, `email`, `password`, `rol`, `fechaRegistro`) VALUES
-(1, 'Urian Viera J', 'iamdeveloper86@gmail.com', '123', 2, '28-04-2021'),
-(18, 'Web Developer', 'programadorphp2017@gmail.com', '12345', 1, '16-07-2021');
+INSERT INTO `login` (`id`, `fullName`, `email`, `password`) VALUES
+(1, 'Urian Viera ', 'iamdeveloper86@gmail.com', '123'),
+(18, 'Web Developer', 'programadorphp2017@gmail.com', '12345');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `logintwo`
+-- Indices de la tabla `login`
 --
-ALTER TABLE `logintwo`
+ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -59,9 +58,9 @@ ALTER TABLE `logintwo`
 --
 
 --
--- AUTO_INCREMENT de la tabla `logintwo`
+-- AUTO_INCREMENT de la tabla `login`
 --
-ALTER TABLE `logintwo`
+ALTER TABLE `login`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
