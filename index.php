@@ -32,14 +32,14 @@ if(isset($_REQUEST['errorEmail'])){ ?>
 <?php }
 
 if(isset($_REQUEST['emaiIncorrecto'])){ ?>
-    <div class="alert show showAlert" style="color:#f44336;">
+    <div class="alert show showAlert" style="color:#fff;">
           <strong> Ops...! </strong>
           Credenciales Incorrectas, por favor verifique.
    </div>
 <?php } 
 
 if(isset($_REQUEST['email'])){ ?>
-    <div class="alert show showAlert" style="color:#f44336;">
+    <div class="alert show showAlert" style="color:#fff;">
           <strong> Felicitaciones! </strong>
           Su clave fue cambiada, revise su correo.
    </div>

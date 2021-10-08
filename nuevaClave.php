@@ -1,13 +1,6 @@
 <?php
 include('verificarDatos/config.php');
-//$id 		      = isset($_POST['id']) ? $_POST['id'] : $_GET['id'];
-//$tokenUser 		= isset($_POST['tokenUser']) ? $_POST['tokenUser'] : $_GET['tokenUser'];
-if($_REQUEST['tokenUser'] !="" && $_REQUEST['id'] !=""){
-
-}else{ ?>
-<meta http-equiv="refresh" content="0;url=index.php"/>
-<?php }
-?>
+if($_REQUEST['tokenUser'] !="" && $_REQUEST['id'] !=""){ ?>
 
 <!doctype html>
 <html lang="en">
@@ -32,7 +25,7 @@ if($_REQUEST['tokenUser'] !="" && $_REQUEST['id'] !=""){
 
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Nueva Clave</label>
+                <label for="password">Nueva Clave</label>
                 <input type="password" name="password" class="form-control">
             </div>
             <button type="submit" class="btn btn-info btn-sm">Recuperar</button>
@@ -44,3 +37,8 @@ if($_REQUEST['tokenUser'] !="" && $_REQUEST['id'] !=""){
 
   </body>
 </html>
+
+<?php 
+}else{ ?>
+    <meta http-equiv="refresh" content="0;url=index.php"/>
+<?php } ?>

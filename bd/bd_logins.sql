@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 04-10-2021 a las 16:31:28
--- Versión del servidor: 10.3.31-MariaDB-cll-lve
--- Versión de PHP: 7.3.30
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 08-10-2021 a las 20:54:03
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sgbcolom_login`
+-- Base de datos: `bd_logins`
 --
 
 -- --------------------------------------------------------
@@ -32,16 +31,17 @@ CREATE TABLE `login` (
   `id` int(10) NOT NULL,
   `fullName` varchar(250) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL
+  `password` varchar(50) DEFAULT NULL,
+  `tokenUser` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`id`, `fullName`, `email`, `password`) VALUES
-(1, 'Urian Viera ', 'iamdeveloper86@gmail.com', '123'),
-(18, 'Web Developer', 'programadorphp2017@gmail.com', '12345');
+INSERT INTO `login` (`id`, `fullName`, `email`, `password`, `tokenUser`) VALUES
+(1, 'Urian Viera ', 'iamdeveloper86@gmail.com', '123', NULL),
+(18, 'Web Developer', 'programadorphp2017@gmail.com', '12345', NULL);
 
 --
 -- Índices para tablas volcadas

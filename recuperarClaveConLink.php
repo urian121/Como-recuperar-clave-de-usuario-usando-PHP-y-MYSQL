@@ -21,9 +21,9 @@ $miTokenClave     = generandoTokenClave();
 $updateClave    = ("UPDATE login SET tokenUser='.$miTokenClave.' WHERE email='".$correo."' ");
 $queryResult    = mysqli_query($con,$updateClave); 
 
-$linkRecuperar      = "https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/id=".$dataConsulta['id']."tokenUser=".$miTokenClave;
+$linkRecuperar      = "https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/nuevaClave.phpid=".$dataConsulta['id']."tokenUser=".$miTokenClave;
 
-$destinatario = trim($emailCliente); //Quitamos algun espacion en blanco
+$destinatario = $correo; //Quitamos algun espacion en blanco
 $asunto       = "Recuperando Clave - WebDeveloper";
 $cuerpo = '
     <!DOCTYPE html>
@@ -106,7 +106,9 @@ $cuerpo .= '
             <div class="misection">
                 <h2 style="color: red; margin: 0 0 7px">Hola, '.$dataConsulta['fullName'].'</h2>
                 <p style="margin: 2px; font-size: 18px">entra en el link para que puedas recuperar tu clave </p>
-                <a href="'.$linkRecuperar.'" class="btnlink">Recuperar mi clave</a>
+                <a href='.$linkRecuperar.' class="btnlink">Recuperar mi clave</a>
+
+                <a href='.$linkRecuperar.' style="background-color: #fe4c50;border: #fe4c50;color: white;text-decoration: none;padding: 10px 40px;border-radius: 5px;"> Recuperar clave </a>
             </div>
         </td>
     </tr>
@@ -137,7 +139,7 @@ $cuerpo .= '
     
     $headers  = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $headers .= "From: WebDeveloper - Urian Viera <urian1213viera@gmail.com>\r\n"; 
+    $headers .= "From: WebDeveloper Urian Viera\r\n"; 
     $headers .= "Reply-To: "; 
     $headers .= "Return-path:"; 
     $headers .= "Cc:"; 

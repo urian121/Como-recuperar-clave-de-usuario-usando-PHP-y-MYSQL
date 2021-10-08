@@ -6,7 +6,7 @@ $logitudPass = 4;
 $miPassword  = substr( md5(microtime()), 1, $logitudPass);
 $clave       = $miPassword;
 
-$correo             = trim($_REQUEST['email']);
+$correo             = trim($_REQUEST['email']); //Quitamos algun espacion en blanco
 $consulta           = ("SELECT * FROM login WHERE email ='".$correo."'");
 $queryconsulta      = mysqli_query($con, $consulta);
 $cantidadConsulta   = mysqli_num_rows($queryconsulta);
@@ -16,11 +16,10 @@ if($cantidadConsulta ==0){
     header("Location:index.php?errorEmail=1");
     exit();
 }else{
-$updateClave    = ("UPDATE login SET password='.$clave.' WHERE email='".$correo."' ");
+$updateClave    = ("UPDATE login SET password='$clave' WHERE email='".$correo."' ");
 $queryResult    = mysqli_query($con,$updateClave); 
 
-
-$destinatario = trim($emailCliente); //Quitamos algun espacion en blanco
+$destinatario = $correo; 
 $asunto       = "Recuperando Clave - WebDeveloper";
 $cuerpo = '
     <!DOCTYPE html>
@@ -102,7 +101,7 @@ $cuerpo .= '
         <td style="background-color: #ffffff;">
             <div class="misection">
                 <h2 style="color: red; margin: 0 0 7px">Hola, '.$dataConsulta['fullName'].'</h2>
-                <p style="margin: 2px; font-size: 18px">te hemos creado una nueva clave temporal para que puedas iniciar sesión, la clave temporal es:'.$clave.' </p>
+                <p style="margin: 2px; font-size: 18px">te hemos creado una nueva clave temporal para que puedas iniciar sesión, la clave temporal es: '.$clave.' </p>
                 <a href="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL" class="btnlink">Iniciar Sesión </a>
             </div>
         </td>
@@ -134,7 +133,7 @@ $cuerpo .= '
     
     $headers  = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $headers .= "From: WebDeveloper - Urian Viera <urian1213viera@gmail.com>\r\n"; 
+    $headers .= "From: WebDeveloper\r\n"; 
     $headers .= "Reply-To: "; 
     $headers .= "Return-path:"; 
     $headers .= "Cc:"; 
