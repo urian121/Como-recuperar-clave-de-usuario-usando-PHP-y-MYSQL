@@ -107,7 +107,7 @@ $cuerpo .= '
                 <a href="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/" class="btnlink">Iniciar Sesión </a>
                 <p>&nbsp;</p>
                  <p>&nbsp;</p>
-                <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/welltow.gif" width="50%">
+                <img style="padding: 0;" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/welltow.gif" width="50%">
                 <p>&nbsp;</p>
             </div>
         </td>
