@@ -87,13 +87,13 @@ $cuerpo .= '
 </head>
 <body>
     <div class="contenedor">
-    <img class="imgBanner" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/banner2.png">
+    <img class="imgBanner" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/banner2.png">
         <p>&nbsp;</p>
         <p>&nbsp;</p>
     <table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
     <tr>
         <td style="padding: 0">
-            <img style="padding: 0; display: block" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/banner.jpg" width="100%">
+            <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/banner.jpg" width="100%">
         </td>
     </tr>
     
@@ -101,8 +101,14 @@ $cuerpo .= '
         <td style="background-color: #ffffff;">
             <div class="misection">
                 <h2 style="color: red; margin: 0 0 7px">Hola, '.$dataConsulta['fullName'].'</h2>
-                <p style="margin: 2px; font-size: 18px">te hemos creado una nueva clave temporal para que puedas iniciar sesión, la clave temporal es: '.$clave.' </p>
-                <a href="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL" class="btnlink">Iniciar Sesión </a>
+                <p style="margin: 2px; font-size: 18px">te hemos creado una nueva clave temporal para que puedas iniciar sesión, la clave temporal es: <strong>'.$clave.'</strong> </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <a href="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/" class="btnlink">Iniciar Sesión </a>
+                <p>&nbsp;</p>
+                 <p>&nbsp;</p>
+                <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/welltow.gif" width="50%">
+                <p>&nbsp;</p>
             </div>
         </td>
     </tr>
@@ -110,7 +116,7 @@ $cuerpo .= '
         <td style="background-color: #ffffff;">
         <div class="misection">
             <h2 style="color: red; margin: 0 0 7px">Visitar Canal de Youtube</h2>
-            <img style="padding: 0; display: block" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/canal.png" width="100%">
+            <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/canal.png" width="100%">
         </div>
         
         <div class="mb-5 misection">  
@@ -121,7 +127,7 @@ $cuerpo .= '
     </tr>
     <tr>
         <td style="padding: 0;">
-            <img style="padding: 0; display: block" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/footer.png" width="100%">
+            <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/footer.png" width="100%">
         </td>
     </tr>
 </table>'; 

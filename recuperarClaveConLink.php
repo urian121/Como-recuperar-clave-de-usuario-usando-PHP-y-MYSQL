@@ -1,7 +1,7 @@
 <?php
 include('verificarDatos/config.php');
 
-$correo             = trim($_REQUEST['email']);
+$correo             = trim($_REQUEST['email']); //Quitamos algun espacion en blanco
 $consulta           = ("SELECT * FROM login WHERE email ='".$correo."'");
 $queryconsulta      = mysqli_query($con, $consulta);
 $cantidadConsulta   = mysqli_num_rows($queryconsulta);
@@ -17,13 +17,15 @@ function generandoTokenClave($length = 20) {
 }
 $miTokenClave     = generandoTokenClave();
 
+
 //Agregando Token en la tabla BD
-$updateClave    = ("UPDATE login SET tokenUser='.$miTokenClave.' WHERE email='".$correo."' ");
+$updateClave    = ("UPDATE login SET tokenUser='$miTokenClave' WHERE email='".$correo."' ");
 $queryResult    = mysqli_query($con,$updateClave); 
 
-$linkRecuperar      = "https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/nuevaClave.phpid=".$dataConsulta['id']."tokenUser=".$miTokenClave;
 
-$destinatario = $correo; //Quitamos algun espacion en blanco
+$linkRecuperar      = "https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/nuevaClave.php?id=".$dataConsulta['id']."&tokenUser=".$miTokenClave;
+
+$destinatario = $correo; 
 $asunto       = "Recuperando Clave - WebDeveloper";
 $cuerpo = '
     <!DOCTYPE html>
@@ -91,13 +93,13 @@ $cuerpo .= '
 </head>
 <body>
     <div class="contenedor">
-    <img class="imgBanner" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/banner2.png">
+    <img class="imgBanner" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/banner2.png">
         <p>&nbsp;</p>
         <p>&nbsp;</p>
     <table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
     <tr>
         <td style="padding: 0">
-            <img style="padding: 0; display: block" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/banner.jpg" width="100%">
+            <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/banner.jpg" width="100%">
         </td>
     </tr>
     
@@ -106,9 +108,13 @@ $cuerpo .= '
             <div class="misection">
                 <h2 style="color: red; margin: 0 0 7px">Hola, '.$dataConsulta['fullName'].'</h2>
                 <p style="margin: 2px; font-size: 18px">entra en el link para que puedas recuperar tu clave </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
                 <a href='.$linkRecuperar.' class="btnlink">Recuperar mi clave</a>
-
-                <a href='.$linkRecuperar.' style="background-color: #fe4c50;border: #fe4c50;color: white;text-decoration: none;padding: 10px 40px;border-radius: 5px;"> Recuperar clave </a>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/work.gif" width="100%">
+                <p>&nbsp;</p>
             </div>
         </td>
     </tr>
@@ -116,7 +122,7 @@ $cuerpo .= '
         <td style="background-color: #ffffff;">
         <div class="misection">
             <h2 style="color: red; margin: 0 0 7px">Visitar Canal de Youtube</h2>
-            <img style="padding: 0; display: block" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/canal.png" width="100%">
+            <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/canal.png" width="100%">
         </div>
         
         <div class="mb-5 misection">  
@@ -127,7 +133,7 @@ $cuerpo .= '
     </tr>
     <tr>
         <td style="padding: 0;">
-            <img style="padding: 0; display: block" src="https://compratucarro.net/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/images/footer.png" width="100%">
+            <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/footer.png" width="100%">
         </td>
     </tr>
 </table>'; 
@@ -139,15 +145,18 @@ $cuerpo .= '
     
     $headers  = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $headers .= "From: WebDeveloper Urian Viera\r\n"; 
+    $headers .= "From: WebDeveloper\r\n"; 
     $headers .= "Reply-To: "; 
     $headers .= "Return-path:"; 
     $headers .= "Cc:"; 
     $headers .= "Bcc:"; 
-    (mail($destinatario,$asunto,$cuerpo,$headers));
+    if(mail($destinatario,$asunto,$cuerpo,$headers)){
 
-    header("Location:index.php?email=1");
-    exit();
+        header("Location:index.php?email=1");
+        exit();
+    }
+
 }
+
 
 ?>
